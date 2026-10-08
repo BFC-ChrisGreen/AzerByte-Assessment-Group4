@@ -1,2 +1,2 @@
-Replace this line during the controlled conflict activity.
+tell the group which file you are editing
 
