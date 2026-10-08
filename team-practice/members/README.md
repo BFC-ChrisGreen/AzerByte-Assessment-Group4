@@ -9,4 +9,3 @@ chris-green.md
 ```
 
 Include your name, proposed project role and one useful Git working rule.
-
