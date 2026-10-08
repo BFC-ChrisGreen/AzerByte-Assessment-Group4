@@ -1,2 +1,2 @@
-Replace this line during the controlled conflict activity.
+pull before beginning new work
 
