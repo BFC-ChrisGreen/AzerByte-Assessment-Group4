@@ -2,44 +2,44 @@
 
 ## Group Members
 
-- 
-- 
-- 
+- Oday
+- Chris
+- Bailey
 - 
 
 ## Task Allocation
 
-How will the group decide who works on each task?
+By who is best fitted to the task
 
 
 ## Communication
 
-How and when will the group communicate between sessions?
+Through teams and discord
 
 
 ## Git Workflow
 
-When should group members pull, commit and push?
+before and after each piece of work
 
 
 ## Shared Files
 
-How will the group avoid unplanned simultaneous changes to the same file?
+through communication
 
 
 ## Commit Messages
 
-What makes a useful commit message for this project?
+clear and concise details
 
 
 ## Problems and Conflicts
 
-What should a member do if a push is rejected or a merge conflict appears?
+contact the other members
 
 
 ## Contribution Check
 
-How will the group check that everyone is contributing throughout the project?
+through clear communication
 
 
 ## Agreement
