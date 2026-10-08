@@ -8,5 +8,5 @@ def check_service():
     data = response.json()
     print(f"Azerbyte service status: {data['status']}")
 
-  if __name__ == "__main__":
+  if __name__ == "__main__"
     check_service()  
