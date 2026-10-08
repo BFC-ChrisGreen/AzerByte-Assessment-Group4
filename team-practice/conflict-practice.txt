@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 tell the group which file you are editing
+=======
+pull before beginning new work
+>>>>>>> c2431791d26aee9a3084d1719d3cccefd1c94453
 
