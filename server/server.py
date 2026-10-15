@@ -45,6 +45,13 @@ def health():
 @app.get("/characters")
 def get_characters():
     return jsonify(characters), 200
+@app.get("/characters/<int:character_id>")
+def get_character(character_id):
+    for character in characters:
+        if character["character_id"] == character_id:
+            return jsonify(character), 200
+
+    return jsonify({"error": "Character not found"}), 404
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000, debug=True)
 
