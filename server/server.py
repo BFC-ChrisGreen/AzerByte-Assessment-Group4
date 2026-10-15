@@ -42,7 +42,7 @@ characters = [
 @app.get("/health")
 def health():
     return jsonify({"service": "azerbyte", "status": "online"}), 200
-    @app.get("/characters")
+@app.get("/characters")
 def get_characters():
     return jsonify(characters), 200
 if __name__ == "__main__":
