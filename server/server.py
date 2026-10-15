@@ -42,6 +42,9 @@ characters = [
 @app.get("/health")
 def health():
     return jsonify({"service": "azerbyte", "status": "online"}), 200
+    @app.get("/characters")
+def get_characters():
+    return jsonify(characters), 200
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000, debug=True)
 
