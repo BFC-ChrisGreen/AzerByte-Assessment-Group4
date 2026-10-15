@@ -4,11 +4,11 @@ Record the final agreed names, data types, required fields and validation rules 
 
 | Field | Data type | Required? | Rules | Example |
 |---|---|---|---|---|
-| `character_id` | Integer | Yes | Unique positive value | `1` |
-| `name` | String | Yes | To be agreed by the group | `Aelwyn` |
-| `character_class` | String | Yes | To be agreed by the group | `Mage` |
-| `level` | Integer | Yes | To be agreed by the group | `12` |
-| `realm` | String | Yes | To be agreed by the group | `Emberfall` |
+| `character_id` | Integer | Yes | Unique positive value  | `1` |
+| `name` | String | Yes | Between 2 and 30 characters  | `Aelwyn` |
+| `character_class` | String | Yes | 	Warrior, Mage, Rogue, Priest or Ranger | `Mage` |
+| `level` | Integer | Yes | Between 1 and 60| `12` |
+| `realm` | String | Yes | Orgrimmar, Stormwatch, Winterspring, Hinterlands | `orgrimmar` |
 
 ## Synchronisation and Consistency Notes
 
