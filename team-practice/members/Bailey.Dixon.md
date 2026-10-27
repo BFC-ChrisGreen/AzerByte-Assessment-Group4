@@ -3,6 +3,7 @@
 ## Proposed Project Role
 
 to be seen
+Built Client in task 2
 
 ## One Git Working Rule
 
