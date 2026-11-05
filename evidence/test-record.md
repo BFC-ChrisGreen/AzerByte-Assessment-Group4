@@ -7,4 +7,4 @@
  |  |
 |Request an existing character ID | Status 200 and one character| worked | Pass | Chris
 |Request character ID 999 | Status 404 and a clear JSON error| worked | Pass | Chris
-|Run the client with the server stopped | A clear connection message rather than a crash| worked | Pass | Chris
+|Run the client with the server stopped | A clear connection message rather than a crash| worked | Pass | Chris 
