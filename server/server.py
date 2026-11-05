@@ -1,57 +1,50 @@
+import sqlite3
+from pathlib import Path
 from flask import Flask, jsonify
 
 app = Flask(__name__)
+DATABASE_PATH = Path(__file__).resolve().parents[1] / "database" / "azerbyte.db"
 
-characters = [
-    {
-        "character_id": 1,
-        "name": "ProfGreen",
-        "character_class": "Warrior",
-        "level": 1,
-        "realm": "Stormwatch",
-    },
-    {
-        "character_id": 2,
-        "name": "BigBoyBailey",
-        "character_class": "Mage",
-        "level": 60,
-        "realm": "Orgrimmar",
-    },
-    {
-        "character_id": 3,
-        "name": "Willson",
-        "character_class": "Ranger",
-        "level": 60,
-        "realm": "Winterspring",
-    },
-    {
-        "character_id": 4,
-        "name": "SneakyOday",
-        "character_class": "Rogue",
-        "level": 60,
-        "realm": "Hinterlands",
-    },
-    {
-        "character_id": 5,
-        "name": "KeithTheConspirator",
-        "character_class": "Priest",
-        "level": 47,
-        "realm": "Stormwatch",
-    },
-]
+
+def get_database_connection():
+    connection = sqlite3.connect(DATABASE_PATH)
+    connection.row_factory = sqlite3.Row
+    return connection
+
+
+
 @app.get("/health")
 def health():
     return jsonify({"service": "azerbyte", "status": "online"}), 200
 @app.get("/characters")
 def get_characters():
-    return jsonify(characters), 200
+    with get_database_connection() as connection:
+        rows = connection.execute(
+            """
+            SELECT character_id, name, character_class, level, realm
+            FROM characters
+            ORDER BY character_id
+            """
+        ).fetchall()
+
+    return jsonify([dict(row) for row in rows]), 200
 @app.get("/characters/<int:character_id>")
 def get_character(character_id):
-    for character in characters:
-        if character["character_id"] == character_id:
-            return jsonify(character), 200
+    with get_database_connection() as connection:
+        row = connection.execute(
+            """
+            SELECT character_id, name, character_class, level, realm
+            FROM characters
+            WHERE character_id = ?
+            """,
+            (character_id,),
+        ).fetchone()
+
+    if row is None:
+        return jsonify({"error": "Character not found"}), 404
+
+    return jsonify(dict(row)), 200
 
     return jsonify({"error": "Character not found"}), 404
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000, debug=True)
-
