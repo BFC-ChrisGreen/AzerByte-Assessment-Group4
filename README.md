@@ -100,3 +100,11 @@ The final repository should contain:
 - Evidence of functional and unsuccessful request testing.
 - Agreed data rules and technical decisions.
 - No real personal data or credentials.
+
+## Running instructions
+
+1. Create and activate .venv if needed.
+2. Install requirements.txt.
+3. Run python database/setup_database.py.
+4. Run python server/server.py in one terminal.
+5. Run python client/client.py in another terminal.
