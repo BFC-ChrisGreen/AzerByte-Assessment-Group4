@@ -14,3 +14,13 @@
 |Request /characters/999 | Status 404 and Character not found | worked | pass | Bailey and Oday
 |Restart Flask and request the characters again | The same records are still returned | worked | pass | Bailey and Oday
 |Run setup on another group member's clone | Their local database is created successfully | worked | pass | Bailey and Oday
+ Test | Expected result | Actual result | Pass/Fail | Completed by | Commit or evidence |
+|View all characters|Every stored character is displayed|as expected|pass|oday|| 
+Find existing character|Status 404 and a clear error|as expected|pass|oday||
+Find missing character|Status 404 and a clear error|as expected|pass|oday||
+Create valid character|Status 201 and a generated ID|as expected|pass|oday||
+Create level 99|Status 400 and a validation error|as expected|pass|oday||
+Update existing character|Status 200 and the changed record|as expected|pass|oday||
+Update ID 999|Status 404 and a clear error|as expected|pass|oday||
+Restart Flask and find the new character|Created and updated values remain|as expected|pass|oday||
+Stop Flask and run the client|A clear unavailable-service message|as expected|pass|oday||
